@@ -3,30 +3,62 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Primary Healthcare for Remote Communities in Ukraine | EMERGENCY</title>
+<title>Primary Healthcare for Remote Communities in Barvinkove Hromada, Ukraine | EMERGENCY</title>
 <style>
 :root{--primary-red:#d7141a;--dark-gray:#333;--light-gray:#f9f9f9;}
 body{font-family:Arial,Helvetica,sans-serif;color:var(--dark-gray);margin:0;line-height:1.6;}
 /* Header with background image */
 header{
-  background:linear-gradient(rgba(215,20,26,0.75),rgba(215,20,26,0.75)),url('8b272ebf-666e-4900-939c-6dead22efca2.png') center/cover no-repeat;
+  background:linear-gradient(rgba(215,20,26,0.4),rgba(215,20,26,0.4)),url('https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/11.png?raw=true') center/cover no-repeat;
   color:#fff;
-  padding:2.5rem 2rem;
+  padding:5rem 2rem;
   position:sticky;
   top:0;
   z-index:1000;
 }
-header h1{margin:0;font-size:1.8rem;text-shadow:0 2px 4px rgba(0,0,0,.6);} 
-nav{margin-top:0.75rem;}
-nav a{color:#fff;text-decoration:none;margin-right:1rem;font-weight:600;}
+header h1{
+  margin:0;
+  font-size:2.4rem;
+  text-shadow:0 2px 4px rgba(0,0,0,.6);
+  text-align:center; /* centered title */
+}
+
+/* Navigation organised into two wrap rows */
+nav{
+  margin-top:1.25rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:0.75rem 1.25rem;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+}
+
 section{padding:4rem 2rem;}
-section:nth-child(odd){background:var(--light-gray);}
-h2{color:var(--primary-red);margin-top:0;}
+section:nth-child(odd){background:var(--light-gray);} 
+
+/* unified image style matching text width */
+.image-break,.image-half{padding:0;text-align:center;}
+.image-break img,.image-half img{
+  width:100%;          /* take full width of container */
+  max-width:1000px;    /* align with .container max-width */
+  height:auto;
+  display:block;
+  margin:0 auto;
+  border-radius:4px;
+}
+
+h2{color:var(--primary-red);margin-top:0;text-align:center;}
 .container{max-width:1000px;margin:auto;}
 footer{background:#111;color:#fff;text-align:center;padding:1rem;font-size:.9rem;}
+
 @media (max-width:600px){
-  nav a{display:block;margin:0.5rem 0;}
-  header{padding:1.5rem;}
+  header{padding:3rem 1.25rem;}
+  header h1{font-size:2rem;}
+  nav{gap:0.5rem;} /* tighter gap on mobile */
 }
 </style>
 </head>
@@ -37,12 +69,13 @@ footer{background:#111;color:#fff;text-align:center;padding:1rem;font-size:.9rem
     <nav>
       <a href="#about-emergency">About EMERGENCY</a>
       <a href="#about-project">About the Project</a>
-      <a href="#for-barvinkove">For Barvinkove Residents</a>
+      <a href="#for-barvinkove">For Barvinkove &amp; Oleksandrivka Residents</a>
       <a href="#for-chws">For Community Health Workers</a>
       <a href="#for-team">For Project Team</a>
     </nav>
   </div>
 </header>
+
 <section id="about-emergency">
   <div class="container">
     <h2>About EMERGENCY NGO</h2>
@@ -50,48 +83,116 @@ footer{background:#111;color:#fff;text-align:center;padding:1rem;font-size:.9rem
     <p>Our work in Ukraine is part of a broader humanitarian commitment that also includes projects in Afghanistan, Sudan, Sierra Leone, Italy, Uganda and search-and-rescue missions in the Mediterranean Sea.</p>
   </div>
 </section>
+
 <section id="about-project">
   <div class="container">
     <h2>About the Project</h2>
     <p>The <em>Primary Healthcare for Remote Communities in Ukraine</em> project strengthens access to essential health services in the conflict-affected <strong>Donetsk oblast</strong> and neighbouring rural areas. By rehabilitating or installing outpatient clinics and deploying trained <strong>Community Health Workers (CHWs)</strong>, we bridge the gap between the national health system and isolated villages that have lost clinics, staff and reliable transport.</p>
     <p>Since 2024 we have opened a network of 14 clinics and trained multidisciplinary teams that deliver free consultations, medicine refills, health education and referrals for about 10,000 residents, many of whom are elderly, living with chronic diseases or have limited mobility.</p>
-    <p>The model proved effective during pilot implementation in Oleksandrivka hromada and now informs expansion to <strong>Barvinkove hromada in Kharkivska oblast</strong>, identified through a 2025 needs-and-assets assessment as an area with high vulnerability and strong local engagement.</p>
+    <p>The model proved effective during pilot implementation in Oleksandrivka hromada and now informs expansion to <strong>Barvinkove hromada in Kharkivska oblast</strong>, identified through a 2025 needs‑and‑assets assessment as an area with high vulnerability and strong local engagement.</p>
   </div>
 </section>
+
+<!-- Image: Mobile clinic interior -->
+<section class="image-break">
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/12.png?raw=true" alt="Interior of EMERGENCY mobile clinic in Ukraine">
+</section>
+
 <section id="for-barvinkove">
   <div class="container">
-    <h2>Information for Residents of Barvinkove and Oleksandrivka Hromada</h2>
+    <h2>Information for Residents of Barvinkove &amp; Oleksandrivka</h2>
     <ul>
       <li><strong>Who can access services?</strong> All residents of Barvinkove and Oleksandrivka hromada, including internally displaced people (IDPs), can receive care <em>free of charge</em>.</li>
       <li><strong>Where are the clinics?</strong> Outpatient clinics are operating in Barvinkove town, Hryhorivka and Dobrosillia. Mobile CHW visits cover 16 surrounding villages.</li>
-      <li><strong>How to book an appointment?</strong> Use the ChatBot button in the right-down corner.</li>
-      <li><strong>What services are offered?</strong> Blood-pressure and glucose monitoring, prescription renewals, maternal and child health checks, basic laboratory tests, mental-health first aid and referrals to specialist facilities in Izium or Kharkiv.</li>
+      <li><strong>How to book an appointment?</strong> Use the ChatBot button in the bottom‑right corner.</li>
+      <li><strong>What services are offered?</strong> Blood‑pressure and glucose monitoring, prescription renewals, maternal &amp; child health checks, basic laboratory tests, mental‑health first aid and specialist referrals.</li>
       <li><strong>Home visits:</strong> For people with reduced mobility, CHWs and nurses can arrange home consultations and medication delivery.</li>
-
     </ul>
   </div>
 </section>
+
+
+
+  
+<!-- In your <head> tag -->
+<script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
+<style>
+  #webchat .bpWebchat {
+    position: unset;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #webchat .bpFab {
+    display: none;
+  }
+</style>
+
+<!-- Put this on your page BEFORE the script below -->
+<div id="webchat" style="width: 500px; height: 500px;"></div>
+
+<!-- In your <body> tag -->
+<script>
+  window.botpress.on("webchat:ready", () => {
+    window.botpress.open();
+  });
+  window.botpress.init({
+  "botId": "fc2d96da-f7dc-490b-a22b-d4fc715fffce",
+  "configuration": {
+    "version": "v1",
+    "botName": "Gino",
+    "website": {},
+    "email": {},
+    "phone": {},
+    "termsOfService": {},
+    "privacyPolicy": {},
+    "color": "#e54d2e",
+    "variant": "solid",
+    "headerVariant": "solid",
+    "themeMode": "light",
+    "fontFamily": "inter",
+    "radius": 4,
+    "feedbackEnabled": false,
+    "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+  },
+  "clientId": "179e91f9-edb0-4b05-a415-efc55a75370d",
+  "selector": "#webchat"
+});
+</script>
+
+<!-- Image before CHW resources -->
+<section class="image-half">
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/13.png?raw=true" alt="EMERGENCY Community Health Worker in the field">
+</section>
+
 <section id="for-chws">
   <div class="container">
-    <h2>Resources for EMERGENCY Community Health Workers</h2>
+    <h2>Resources for Community Health Workers</h2>
     <p>Welcome to the CHW resource hub. Here you will find quick links and documents to support your daily work:</p>
     <ul>
       <li><a href="#">CommCare Field Guide&nbsp;v2.1 (PDF)</a></li>
-      <li><a href="#">Referral & Escalation Flowchart (PNG)</a></li>
+      <li><a href="#">Referral &amp; Escalation Flowchart (PNG)</a></li>
       <li><a href="#">NCD Management Pocket Guide (PDF)</a></li>
-      <li><a href="#">Mental-Health First-Aid Checklist</a></li>
+      <li><a href="#">Mental‑Health First‑Aid Checklist</a></li>
       <li><a href="#">Monthly Reporting Template (Excel)</a></li>
     </ul>
-    <p><strong>Daily routine reminder:</strong> plan 4 hours of household visits, sync CommCare data before 17:00 EET, and debrief urgent cases with the duty feldsher by 18:00.</p>
-
+    <p><strong>Daily routine reminder:</strong> plan 4&nbsp;hours of household visits, sync CommCare data before 17:00 EET, and debrief urgent cases with the duty feldsher by 18:00.</p>
   </div>
 </section>
+
+<!-- Image before Project Team section -->
+<section class="image-half">
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/WhatsApp%20Image%202025-03-11%20at%2009.26.07%20(3).jpeg?raw=true" alt="EMERGENCY field team meeting">
+</section>
+
 <section id="for-team">
   <div class="container">
     <h2>Information for EMERGENCY Project Team</h2>
     <p>This section gathers internal tools for medical, logistics and MEAL staff.</p>
     <ul>
-      <li><a href="#">Standard Operating Procedures (SOPs) – version 05/2025</a></li>
+   <li><a href="#">Standard Operating Procedures (SOPs) – version 05/2025</a></li>
       <li><a href="#">Security Plan – Barvinkove Area (restricted)</a></li>
       <li><a href="#">Supply Requisition Form (online)</a></li>
       <li><a href="#">Weekly Situation Report template</a></li>
