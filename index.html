@@ -4,36 +4,55 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>EMERGENCY NGO | Primary Healthcare for Remote Communities in Kharkiv Region, Ukraine</title>
+
   <!-- Roboto font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Plotly for the dashboard -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   <style>
     :root{--primary-red:#d7141a;--dark-gray:#333;--light-gray:#f9f9f9;}
+
     body{font-family:'Roboto',Arial,Helvetica,sans-serif;color:var(--dark-gray);margin:0;line-height:1.6;}
     p,li{text-align:justify;}
+
     /* Header */
-    header{background:linear-gradient(rgba(215,20,26,.4),rgba(215,20,26,.4)),url('https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/11.png?raw=true') center/cover no-repeat;color:#fff;padding:5rem 2rem 3.5rem;text-align:center;}
+    header{background:linear-gradient(rgba(215,20,26,.4),rgba(215,20,26,.4)),
+           url('https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/11.png?raw=true')
+           center/cover no-repeat;
+           color:#fff;padding:5rem 2rem 3.5rem;text-align:center;}
     .statement{display:block;font-size:3rem;font-weight:700;text-shadow:0 3px 6px rgba(0,0,0,.6);margin-bottom:.6rem;}
     .subtitle{display:block;font-size:1.7rem;font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,.6);}
+
     /* Navigation (sticky) */
-    nav{position:sticky;top:0;z-index:999;background:rgba(215,20,26,.95);margin-top:2rem;padding:.6rem 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1.6rem;backdrop-filter:blur(4px);}
+    nav{position:sticky;top:0;z-index:999;background:rgba(215,20,26,.95);margin-top:2rem;
+        padding:.6rem 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem 1.6rem;
+        backdrop-filter:blur(4px);}
     nav a{color:#fff;text-decoration:none;font-weight:500;}
     nav a:hover{text-decoration:underline;}
+
     /* Sections */
     section{padding:4rem 2rem;}
     section:nth-child(odd){background:var(--light-gray);}
     h2{color:var(--primary-red);margin-top:0;text-align:center;font-weight:500;}
     .container{max-width:1000px;margin:auto;}
+
     /* Images */
     .image-break,.image-half{padding:0;text-align:center;}
     .image-break img,.image-half img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;border-radius:4px;}
+
     /* Q&A static boxes */
     .qa-row{display:flex;flex-wrap:wrap;align-items:flex-start;margin-bottom:1.5rem;}
-    .qa-box{background:var(--primary-red);color:#fff;border-radius:4px;padding:.9rem 1rem;margin-right:1rem;flex:0 0 260px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:500;}
+    .qa-box{background:var(--primary-red);color:#fff;border-radius:4px;padding:.9rem 1rem;margin-right:1rem;
+            flex:0 0 260px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:500;}
     .qa-answer{flex:1 1 300px;}
-    /* Footer */
+
+    /* FOOTER */
     footer{background:#111;color:#fff;text-align:center;padding:1rem;font-size:.9rem;}
+
     /* Mobile tweaks */
     @media(max-width:600px){
       header{padding:4rem 1rem 3rem}
@@ -43,8 +62,29 @@
       .qa-box{flex:1 1 100%;margin:0 0 .5rem 0}
       .qa-answer{flex:1 1 100%}
     }
+
+    /* ------- DASHBOARD (scoped) ------- */
+    .dashboard{font-family:'Roboto',Arial,Helvetica,sans-serif;--teal:#00838a;--grey:#b7b7b7;--red:#d7263d;
+               --bg:#ffffff;--text:#212121;}
+    .dashboard *{box-sizing:border-box;}
+    .dashboard header{background:var(--bg);padding:20px 20px 12px;border-bottom:2px solid var(--teal);}
+    .dashboard header h1{margin:0;text-align:center;font-weight:700;color:var(--red);font-size:42px;white-space:nowrap;}
+    .dashboard .container{max-width:1000px;margin:0 auto;padding:20px;}
+    .dashboard .row{display:grid;gap:28px;margin-bottom:42px;}
+    .dashboard .row-first{grid-template-columns:3fr 1fr;align-items:center;}
+    .dashboard .row.cols-2{grid-template-columns:1fr 1fr;}
+    .dashboard .card{padding:16px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);background:#fff;}
+    .dashboard .side-stat{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;}
+    .dashboard .side-stat .stat{font-size:36px;font-weight:700;color:var(--red);margin:0;}
+    .dashboard .side-stat .stat-label{font-size:18px;font-weight:600;color:var(--grey);}
+    .dashboard footer{padding:20px;text-align:center;font-size:12px;color:var(--grey);}
+    @media(max-width:800px){
+      .dashboard header h1{font-size:28px}
+      .dashboard .row-first{grid-template-columns:1fr}
+    }
   </style>
 </head>
+
 <body>
 <header>
   <div class="container">
@@ -83,7 +123,8 @@
 
 <!-- Full-width project image -->
 <section class="image-break">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/12.png?raw=true" alt="Interior of EMERGENCY mobile clinic in Ukraine" />
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/12.png?raw=true"
+       alt="Interior of EMERGENCY mobile clinic in Ukraine" />
 </section>
 
 <!-- Appointment Section -->
@@ -111,7 +152,8 @@
 
 <!-- CHW image -->
 <section class="image-half">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/13.png?raw=true" alt="EMERGENCY Community Health Worker in the field" />
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/13.png?raw=true"
+       alt="EMERGENCY Community Health Worker in the field" />
 </section>
 
 <!-- CHW Workspace -->
@@ -120,33 +162,132 @@
     <h2>CHW Workspace</h2>
     <p>This section includes useful training and education resources for CHWs to fulfill their daily activities and ensure access and continuity of care to the general population.</p>
     <ul>
-      <li><a href="https://drive.google.com/file/d/1fXbjvEznWUQpJAgKQ4dSHg6EsV6yj6Vo/view?usp=drive_link" target="_blank">Hypertension: Prevention, Screening, Measurement &amp; Management</a></li>
-      <li><a href="https://drive.google.com/file/d/1lV9clKtZybYEtXrAUDQVUFa2Syltm9a1/view?usp=drive_link" target="_blank">Diabetes: Prevention, Screening, Measurement &amp; Management</a></li>
-      <li><a href="https://drive.google.com/file/d/1qD27pyAyrYBsTuMiMdoeAs1bcsiEzt8w/view?usp=drive_link" target="_blank">Mental Health &amp; Well-Being Quick Guide for Community Health Workers</a></li>
-      <li><a href="https://drive.google.com/file/d/1nFrq5xsttw3W9g9tonpG_9XzRQhMa5zK/view?usp=drive_link" target="_blank">Home-Based Physical Activity Guide for Older Adults</a></li>
+      <li><a href="https://drive.google.com/file/d/1fXbjvEznWUQpJAgKQ4dSHg6EsV6yj6Vo/view?usp=drive_link" target="_blank">
+          Hypertension: Prevention, Screening, Measurement &amp; Management</a></li>
+      <li><a href="https://drive.google.com/file/d/1lV9clKtZybYEtXrAUDQVUFa2Syltm9a1/view?usp=drive_link" target="_blank">
+          Diabetes: Prevention, Screening, Measurement &amp; Management</a></li>
+      <li><a href="https://drive.google.com/file/d/1qD27pyAyrYBsTuMiMdoeAs1bcsiEzt8w/view?usp=drive_link" target="_blank">
+          Mental Health &amp; Well-Being Quick Guide for Community Health Workers</a></li>
+      <li><a href="https://drive.google.com/file/d/1nFrq5xsttw3W9g9tonpG_9XzRQhMa5zK/view?usp=drive_link" target="_blank">
+          Home-Based Physical Activity Guide for Older Adults</a></li>
     </ul>
   </div>
 </section>
 
 <!-- Additional full-width image before dashboard -->
 <section class="image-half">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/WhatsApp%20Image%202025-03-11%20at%2009.26.07%20(3).jpeg?raw=true" alt="CHW training session in Ukraine" />
+  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/WhatsApp%20Image%202025-03-11%20at%2009.26.07%20(3).jpeg?raw=true"
+       alt="CHW training session in Ukraine" />
 </section>
 
-<!-- Project Dashboard -->
+<!-- Project Dashboard (embedded) -->
 <section id="for-team">
   <div class="container">
     <h2>Project Dashboard</h2>
-    <p>The dashboard provides a real-time visual overview of key project indicators, including number of consultations, clinic coverage, referrals made, CHW activities and medication stock status. It helps track progress, identify service gaps and guide operational decisions. Data are updated regularly from field teams using mobile tools.</p>
-    <p><a href="#">Access the Project Dashboard</a> (password protected).</p>
-  </div>
+
+    <div class="dashboard">
+
+      <header><h1>EMERGENCY PHC Project – Ukraine – Monthly Report</h1></header>
+
+      <div class="container">
+        <div class="row row-first">
+          <div id="chart-first-month" class="card" style="height:320px"></div>
+          <div class="card side-stat">
+            <p id="side-cumulative" class="stat">–</p>
+            <span class="stat-label">Total First Visits</span>
+          </div>
+        </div>
+
+        <div class="row cols-2">
+          <div id="pie-gender" class="card" style="height:300px"></div>
+          <div id="pie-age"    class="card" style="height:300px"></div>
+        </div>
+
+        <div class="row cols-2">
+          <div id="pie-employment" class="card" style="height:300px"></div>
+          <div id="pie-lastseen"   class="card" style="height:300px"></div>
+        </div>
+
+        <div class="row center">
+          <div id="bar-symptoms" class="card" style="height:380px"></div>
+        </div>
+      </div>
+
+      <footer id="updated">Data last updated: –</footer>
+    </div><!-- /.dashboard -->
+  </div><!-- /.container -->
 </section>
 
 <footer>
   &copy; 2025 EMERGENCY NGO – Primary Healthcare in Kharkiv Region | Designed by Paolo Malerba
 </footer>
 
+<!-- Botpress ChatBot -->
 <script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2025/06/22/17/20250622172519-ZUX3U7Y7.js"></script>
+
+<!-- Dashboard logic -->
+<script>
+const API_URL = "https://opensheet.elk.sh/1tIr5xZK1VQwLz_m5ooNx261rjdZcJD-8MeENZ1IYxvU/Data";
+const TEAL="#00838a", GREY="#b7b7b7", RED="#d7263d";
+const MONTH_ORDER=["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SYMPTOM_COLS=["Headache","High Blood Pressure","High blood sugare","Gastrointestinal symptoms","Respiratory symptoms","Depressed mood","Insomnia"];
+const CHRONIC_COLS=["Cardio vascular diseases","Diabetes","Respiratory diseases","Neurological diseases","Other chronic diseases"];
+const NEED_COLS=["Medication","Equipment","Transportation to facility","Financial support"];
+const ACT_COLS=["Health education","Medication delivery","Monitoring","Referral","Other","Advocacy","Follow-up","Home visit"];
+const COMPLIANCE_COLS=[
+  "Chronic medication","Cardio vascular diseases","Diabetes","Respiratory diseases",
+  "Neurological diseases","Other chronic diseases","Medication compliance"
+];
+
+const tc=s=>s.replace(/\w\S*/g,t=>t.charAt(0).toUpperCase()+t.substr(1).toLowerCase());
+const sum=(d,k)=>{d[k]=(d[k]||0)+1};
+const genShades=(hex,n)=>{const rgb=hex.match(/#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})/i).slice(1).map(x=>parseInt(x,16));
+                           return Array.from({length:n},(_,i)=>`rgba(${rgb[0]},${rgb[1]},${rgb[2]},${(i+1)/(n+1)+0.2})`);};
+
+fetch(API_URL).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(rows=>{
+  const monthTotals={},gender={},age={},emp={},seen={},sym={},chr={},need={},act={},comp={};
+
+  rows.forEach(r=>{
+    const m=tc(r.Month||"").trim();if(m)sum(monthTotals,m);
+    sum(gender,tc(r.Gender||"Unknown"));sum(age,tc(r.Age||"Unknown"));
+    sum(emp,tc(r.Employment||"Unknown"));sum(seen,tc(r["Last time seen by a health professional"]||"Unknown"));
+    SYMPTOM_COLS.forEach(c=>{if((r[c]||"").trim().toLowerCase()==="yes")sum(sym,c)});
+    CHRONIC_COLS.forEach(c=>{if((r[c]||"").trim().toLowerCase()==="yes")sum(chr,c)});
+    NEED_COLS.forEach(c=>{if((r[c]||"").trim().toLowerCase()==="yes")sum(need,c)});
+    ACT_COLS.forEach(c=>{if((r[c]||"").trim().toLowerCase()==="yes")sum(act,c)});
+    COMPLIANCE_COLS.forEach(c=>{if((r[c]||"").trim().toLowerCase()==="yes")sum(comp,c)});
+  });
+
+  document.getElementById("side-cumulative").textContent=rows.length.toLocaleString();
+  const months=Object.keys(monthTotals).sort((a,b)=>MONTH_ORDER.indexOf(a)-MONTH_ORDER.indexOf(b));
+  Plotly.newPlot("chart-first-month",[{
+     type:"bar",marker:{color:TEAL},x:months,y:months.map(m=>monthTotals[m])
+  }],{title:"First Visits per Month",margin:{t:40}});
+
+  const pie=(id,title,labels,values,base)=>{
+     Plotly.newPlot(id,[{
+        type:"pie",hole:.4,labels,values,
+        domain:{x:[0.35,1],y:[0,1]},
+        marker:{colors:genShades(base,labels.length)},
+        textinfo:"none"
+     }],{title,margin:{t:50,b:20,l:20,r:20},showlegend:true,
+         legend:{orientation:"v",x:0,y:0.5,xanchor:"right"}});
+  };
+
+  pie("pie-gender","Gender",Object.keys(gender),Object.values(gender),TEAL);
+  const ageLabels=Object.keys(age).sort((a,b)=>parseInt(a)-parseInt(b));
+  pie("pie-age","Age",ageLabels,ageLabels.map(l=>age[l]),TEAL);
+  pie("pie-employment","Employment",Object.keys(emp),Object.values(emp),GREY);
+  pie("pie-lastseen","Last time seen by a health professional",Object.keys(seen),Object.values(seen),GREY);
+
+  Plotly.newPlot("bar-symptoms",[{
+     type:"bar",x:Object.keys(sym),y:Object.values(sym),marker:{color:TEAL}
+  }],{title:"Symptoms Reported",margin:{t:50,b:120},xaxis:{tickangle:-45}});
+
+  document.getElementById("updated").textContent="Data last updated: "+
+      new Date().toISOString().slice(0,16).replace("T"," ");
+}).catch(e=>{alert("Load error "+e.message);console.error(e)});
+</script>
 </body>
 </html>
