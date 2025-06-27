@@ -1,302 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Primary Healthcare for Remote Communities in Barvinkove Hromada, Ukraine | EMERGENCY</title>
-<!-- Botpress WebChat library -->
-<script src="https://cdn.botpress.cloud/webchat/v3.0/inject.js"></script>
-<style>
-:root{--primary-red:#d7141a;--dark-gray:#333;--light-gray:#f9f9f9;}
-body{font-family:Arial,Helvetica,sans-serif;color:var(--dark-gray);margin:0;line-height:1.6;}
-/* Header with background image */
-header{
-  background:linear-gradient(rgba(215,20,26,0.4),rgba(215,20,26,0.4)),url('https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/11.png?raw=true') center/cover no-repeat;
-  color:#fff;
-  padding:5rem 2rem;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-header h1{margin:0;font-size:2.4rem;text-shadow:0 2px 4px rgba(0,0,0,.6);text-align:center;}
-/* Navigation organised into two wrap rows */
-nav{margin-top:1.25rem;display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem 1.25rem;}
-nav a{color:#fff;text-decoration:none;font-weight:600;}
-section{padding:4rem 2rem;}
-section:nth-child(odd){background:var(--light-gray);} 
-/* unified image style matching text width */
-.image-break,.image-half{padding:0;text-align:center;}
-.image-break img,.image-half img{width:100%;max-width:1000px;height:auto;display:block;margin:0 auto;border-radius:4px;}
-/* Botpress WebChat container overrides */
-#webchat .bpWebchat{position:unset;width:100%;height:100%;max-height:100%;max-width:100%;}
-#webchat .bpFab{display:none;}
-
-h2{color:var(--primary-red);margin-top:0;text-align:center;}
-.container{max-width:1000px;margin:auto;}
-footer{background:#111;color:#fff;text-align:center;padding:1rem;font-size:.9rem;}
-@media (max-width:600px){header{padding:3rem 1.25rem;}header h1{font-size:2rem;}nav{gap:0.5rem;}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMERGENCY NGO | Primary Healthcare for Remote Communities in Kharkiv Region, Ukraine</title>
+  <!-- Roboto font (same family used on emergency.it) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --primary-red:#d7141a; --dark-gray:#333; --light-gray:#f9f9f9; }
+    body { font-family:'Roboto', Arial, Helvetica, sans-serif; color:var(--dark-gray); margin:0; line-height:1.6; }
+    p, li { text-align:justify; }
+    /* Header */
+    header { background:linear-gradient(rgba(215,20,26,.4),rgba(215,20,26,.4)),url('https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/11.png?raw=true') center/cover no-repeat; color:#fff; padding:5rem 2rem 4rem; text-align:center; }
+    .statement { display:block; font-size:3rem; font-weight:700; text-shadow:0 3px 6px rgba(0,0,0,.6); margin-bottom:.6rem; }
+    .subtitle { display:block; font-size:1.7rem; font-weight:700; text-shadow:0 2px 4px rgba(0,0,0,.6); }
+    /* Navigation */
+    nav { margin-top:2.2rem; display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem 1.6rem; }
+    nav a { color:#fff; text-decoration:none; font-weight:500; }
+    nav a:hover { text-decoration:underline; }
+    /* Sections */
+    section { padding:4rem 2rem; }
+    section:nth-child(odd) { background:var(--light-gray); }
+    h2 { color:var(--primary-red); margin-top:0; text-align:center; font-weight:500; }
+    .container { max-width:1000px; margin:auto; }
+    /* Images */
+    .image-break, .image-half { padding:0; text-align:center; }
+    .image-break img, .image-half img { width:100%; max-width:1000px; height:auto; display:block; margin:0 auto; border-radius:4px; }
+    /* Interactive Q&A */
+    .qa-row { display:flex; flex-wrap:wrap; align-items:flex-start; margin-bottom:1.5rem; }
+    .qa-toggle { background:var(--primary-red); color:#fff; border:none; padding:.75rem 1rem; cursor:pointer; font-family:inherit; border-radius:4px; margin-right:1rem; flex:0 0 260px; text-align:left; }
+    .qa-answer { flex:1 1 300px; display:none; }
+    .qa-row.open .qa-answer { display:block; animation:fadeIn .3s ease-in; }
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    /* Footer */
+    footer { background:#111; color:#fff; text-align:center; padding:1rem; font-size:.9rem; }
+    /* Responsive */
+    @media(max-width:600px){
+      header{padding:4rem 1rem 3rem;}
+      .statement{font-size:2.4rem;}
+      .subtitle{font-size:1.3rem;}
+      nav{gap:.6rem;}
+      .qa-toggle{flex:1 1 100%; margin:0 0 .5rem 0;}
+      .qa-answer{flex:1 1 100%;}
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="container">
-    <h1>Primary Healthcare for Remote Communities in Ukraine</h1>
-    <nav>
-      <a href="#about-emergency">About EMERGENCY</a>
-      <a href="#about-project">About the Project</a>
-      <a href="#for-barvinkove">For Barvinkove &amp; Oleksandrivka Residents</a>
-      <a href="#for-chws">For Community Health Workers</a>
-      <a href="#for-team">For Project Team</a>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <span class="statement">Ensuring access to care. To everyone.</span>
+      <span class="subtitle">Primary Healthcare for Remote Communities in Kharkiv Region, Ukraine</span>
+      <nav>
+        <a href="#about-emergency">EMERGENCY NGO</a>
+        <a href="#about-project">PHC Project in Ukraine</a>
+        <a href="#for-barvinkove">How to Book an Appointment</a>
+        <a href="#for-chws">CHW Workspace</a>
+        <a href="#for-team">Project Dashboard</a>
+      </nav>
+    </div>
+  </header>
 
-<section id="about-emergency">
-  <div class="container">
-    <h2>About EMERGENCY NGO</h2>
-    <p>EMERGENCY is an independent, neutral organisation founded in 1994 to offer <strong>free, high-quality medical and surgical care</strong> to victims of war, landmines and poverty. In 30&nbsp;years we have treated over <strong>13&nbsp;million people in 21 countries</strong>, building sustainable healthcare facilities, training local personnel and promoting a culture of peace, solidarity and respect for human rights.</p>
-    <p>Our work in Ukraine is part of a broader humanitarian commitment that also includes projects in Afghanistan, Sudan, Sierra Leone, Italy, Uganda and search-and-rescue missions in the Mediterranean Sea.</p>
-  </div>
-</section>
+  <!-- About EMERGENCY -->
+  <section id="about-emergency">
+    <div class="container">
+      <h2>About EMERGENCY NGO</h2>
+      <p>EMERGENCY is an independent, neutral organisation founded in 1994 to offer <strong>free, high-quality medical and surgical care</strong> to victims of war, landmines and poverty. In more than 30 years EMERGENCY has treated over <strong>13 million people in 21 countries</strong>, building sustainable healthcare facilities, training local personnel and promoting a culture of peace, solidarity and respect for human rights.</p>
+      <p>The project established in Ukraine is part of a broader humanitarian commitment that also includes projects in Afghanistan, Sudan, Sierra Leone, Italy, Uganda and search-and-rescue missions in the Mediterranean Sea.</p>
+      <p>For more information about EMERGENCY, please visit the <a href="https://en.emergency.it/" target="_blank" rel="noopener">official website</a>.</p>
+    </div>
+  </section>
 
-<section id="about-project">
-  <div class="container">
-    <h2>About the Project</h2>
-    <p>The <em>Primary Healthcare for Remote Communities in Ukraine</em> project strengthens access to essential health services in the conflict-affected <strong>Donetsk oblast</strong> and neighbouring rural areas. By rehabilitating or installing outpatient clinics and deploying trained <strong>Community Health Workers (CHWs)</strong>, we bridge the gap between the national health system and isolated villages that have lost clinics, staff and reliable transport.</p>
-    <p>Since 2024 we have opened a network of 14 clinics and trained multidisciplinary teams that deliver free consultations, medicine refills, health education and referrals for about 10,000 residents, many of whom are elderly, living with chronic diseases or have limited mobility.</p>
-    <p>The model proved effective during pilot implementation in Oleksandrivka hromada and now informs expansion to <strong>Barvinkove hromada in Kharkivska oblast</strong>, identified through a 2025 needs‑and‑assets assessment as an area with high vulnerability and strong local engagement.</p>
-  </div>
-</section>
+  <!-- About the Project -->
+  <section id="about-project">
+    <div class="container">
+      <h2>PHC Project in Ukraine</h2>
+      <p>The <strong>Primary Healthcare for Remote Communities in Kharkiv Region, Ukraine</strong> project strengthens access to essential health services in the conflict‑affected Kharkiv region and neighbouring rural areas. By rehabilitating or installing outpatient clinics and deploying trained <strong>Community Health Workers (CHWs)</strong>, we bridge the gap between the national health system and isolated villages that have lost clinics, staff and reliable transports.</p>
+      <p>Since 2024 we have opened a network of 14 clinics and trained multidisciplinary teams that deliver free consultations, medicine refills, health education and referrals for about 13 000 residents, many of whom are elderly, living with chronic diseases or have limited mobility.</p>
+      <p>The model proved effective during pilot implementation in Oleksandrivka hromada and now informs expansion to <strong>Barvinkove hromada</strong>, identified through a 2025 needs‑and‑assets assessment as an area with high vulnerability and strong local engagement.</p>
+    </div>
+  </section>
 
-<!-- Image: Mobile clinic interior -->
-<section class="image-break">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/12.png?raw=true" alt="Interior of EMERGENCY mobile clinic in Ukraine">
-</section>
+  <!-- Full-width project image -->
+  <section class="image-break">
+    <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/12.png?raw=true" alt="Interior of EMERGENCY mobile clinic in Ukraine" />
+  </section>
 
-<section id="for-barvinkove">
-  <div class="container">
-    <h2>Information for Residents of Barvinkove &amp; Oleksandrivka</h2>
-    <ul>
-      <li><strong>Who can access services?</strong> All residents of Barvinkove and Oleksandrivka hromada, including internally displaced people (IDPs), can receive care <em>free of charge</em>.</li>
-      <li><strong>Where are the clinics?</strong> Outpatient clinics are operating in Barvinkove town, Hryhorivka and Dobrosillia. Mobile CHW visits cover 16 surrounding villages.</li>
-      <li><strong>How to book an appointment?</strong> Use the ChatBot button in the bottom‑right corner.</li>
-      <li><strong>What services are offered?</strong> Blood‑pressure and glucose monitoring, prescription renewals, maternal &amp; child health checks, basic laboratory tests, mental‑health first aid and specialist referrals.</li>
-      <li><strong>Home visits:</strong> For people with reduced mobility, CHWs and nurses can arrange home consultations and medication delivery.</li>
-    </ul>
-  </div>
-</section>
+  <!-- Interactive Appointment Section -->
+  <section id="for-barvinkove">
+    <div class="container">
+      <h2>How to Book an Appointment</h2>
 
-<!-- Botpress WebChat embed -->
-<div id="webchat" style="width: 500px; height: 500px;"></div>
-<script>
-  window.botpress.on("webchat:ready", () => { window.botpress.open(); });
-  window.botpress.init({
-    "botId": "fc2d96da-f7dc-490b-a22b-d4fc715fffce",
-    "configuration": {
-      "version": "v1",
-      "botName": "Gino",
-      "color": "#e54d2e",
-      "variant": "solid",
-      "headerVariant": "solid",
-      "themeMode": "light",
-      "fontFamily": "inter",
-      "radius": 4,
-      "feedbackEnabled": false,
-      "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)"
-    },
-    "clientId": "179e91f9-edb0-4b05-a415-efc55a75370d",
-    "selector": "#webchat"
-  });
-</script>
+      <div class="qa-row">
+        <button class="qa-toggle">Who can access services?</button>
+        <p class="qa-answer">All residents of Barvinkove and Blyzniuky hromada, including internally displaced people can access EMERGENCY services and receive free of charge care.</p>
+      </div>
 
-<!-- Image before CHW resources -->
-<section class="image-half">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/13.png?raw=true" alt="EMERGENCY Community Health Worker in the field">
-</section>
+      <div class="qa-row">
+        <button class="qa-toggle">Where are EMERGENCY clinics located?</button>
+        <p class="qa-answer">Outpatient clinics operate in Barvinkove, Blyzniuky, Oleksandrivka, and Dobrosillia. Mobile clinics cover 30 surrounding villages. CHWs are available for home visits, upon appointment, for people with reduced mobility.</p>
+      </div>
 
-<section id="for-chws">
-  <div class="container">
-    <h2>Resources for Community Health Workers</h2>
-    <p>Welcome to the CHW resource hub. Here you will find quick links and documents to support your daily work:</p>
-    <ul>
-      <li><a href="#">CommCare Field Guide&nbsp;v2.1 (PDF)</a></li>
-      <li><a href="#">Referral &amp; Escalation Flowchart (PNG)</a></li>
-      <li><a href="#">NCD Management Pocket Guide (PDF)</a></li>
-      <li><a href="#">Mental‑Health First‑Aid Checklist</a></li>
-      <li><a href="#">Monthly Reporting Template (Excel)</a></li>
-    </ul>
-    <p><strong>Daily routine reminder:</strong> plan 4 hours of household visits, sync CommCare data before 17:00 EET, and debrief urgent cases with the duty feldsher by 18:00.</p>
-  </div>
-</section>
+      <div class="qa-row">
+        <button class="qa-toggle">Which services are offered?</button>
+        <p class="qa-answer">Blood‑pressure and glucose monitoring, prescription renewals, maternal &amp; child health checks, basic laboratory tests, mental‑health first aid and specialist referrals.</p>
+      </div>
 
-<!-- Image before Project Team section -->
-<section class="image-half">
-  <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/WhatsApp%20Image%202025-03-11%20at%2009.26.07%20(3).jpeg?raw=true" alt="EMERGENCY field team meeting">
-</section>
+      <div class="qa-row">
+        <button class="qa-toggle">How can I book a home visit?</button>
+        <p class="qa-answer">To book a home visit ask Gino, our ChatBot!</p>
+      </div>
 
-<section id="for-team">
-  <div class="container">
-    <h2>Information for EMERGENCY Project Team</h2>
+    </div>
+  </section>
 
-  html_path = Path("/mnt/data/emergency_phc_dashboard_gviz.html")
+  <!-- Half-width CHW image -->
+  <section class="image-half">
+    <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/13.png?raw=true" alt="EMERGENCY Community Health Worker in the field" />
+  </section>
 
-gviz_csv_url = "https://docs.google.com/spreadsheets/d/1tIr5xZK1VQwLz_m5ooNx261rjdZcJD-8MeENZ1IYxvU/gviz/tq?tqx=out:csv&gid=849395159"
+  <!-- CHW Workspace -->
+  <section id="for-chws">
+    <div class="container">
+      <h2>CHW Workspace</h2>
+      <p>Quick links and documents to support daily field work:</p>
+      <ul>
+        <li><a href="#">CommCare Field Guide v2.1 (PDF)</a></li>
+        <li><a href="#">Referral &amp; Escalation Flowchart (PNG)</a></li>
+        <li><a href="#">NCD Management Pocket Guide (PDF)</a></li>
+        <li><a href="#">Mental‑Health First‑Aid Checklist</a></li>
+        <li><a href="#">Monthly Reporting Template (Excel)</a></li>
+      </ul>
+      <p><strong>Daily routine reminder:</strong> Plan 4 hours of household visits, sync CommCare data before 17:00 EET, and debrief urgent cases with the duty feldsher by 18:00.</p>
+    </div>
+  </section>
 
-html_content = f"""<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>EMERGENCY PHC Project - Ukraine - Monthly Report</title>
+  <!-- Team meeting image -->
+  <section class="image-half">
+    <img src="https://github.com/paolomalerba/GRAPH-AI-Course---Final-Project/blob/main/WhatsApp%20Image%202025-03-11%20at%2009.26.07%20(3).jpeg?raw=true" alt="EMERGENCY field team meeting" />
+  </section>
 
-<!-- Plotly -->
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<!-- PapaParse -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <!-- Placeholder for future dashboard section -->
+  <section id="for-team">
+    <div class="container">
+      <h2>Project Dashboard (Coming Soon)</h2>
+      <p>Interactive visualisations of service data will appear here.</p>
+    </div>
+  </section>
 
-<style>
-  body {{ font-family: Arial, sans-serif; margin: 20px; max-width: 1200px; }}
-  h1   {{ text-align: center; }}
-  .chart {{ margin-bottom: 60px; }}
-  .error {{ color: red; }}
-  @media (max-width: 700px) {{ .chart {{ margin-bottom: 40px; }} }}
-</style>
-</head>
-<body>
-<h1>EMERGENCY PHC Project - Ukraine - Monthly Report</h1>
+  <footer>
+    <div class="container"><p>&copy; 2025 EMERGENCY NGO. All services provided are free of charge and without discrimination.</p></div>
+  </footer>
 
-<div id="chart-month" class="chart"></div>
-<div id="chart-gender" class="chart"></div>
-<div id="chart-age" class="chart"></div>
-<div id="chart-cond" class="chart"></div>
-
-<script>
-// -------- SETTINGS --------
-const CSV_URL = "{gviz_csv_url}";
-
-// Column names expected in the sheet
-const CONDITION_COLS = [
-  "Headache",
-  "High Blood Pressure",
-  "High blood sugare",
-  "Gastrointestinal symptoms",
-  "Respiratory symptoms",
-  "Depressed mood",
-  "Insomnia"
-];
-
-// -------- UTILS --------
-const titleCase = str => str.replace(/\\w\\S*/g, t => t.charAt(0).toUpperCase() + t.substr(1).toLowerCase());
-const showError = msg => {{
-  document.body.insertAdjacentHTML('afterbegin', `<p class="error">${{msg}}</p>`);
-}};
-
-// -------- MAIN --------
-fetch(CSV_URL, {{ mode: "cors" }})
-  .then(r => {{
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r.text();
-  }})
-  .then(csvText => {{
-      const rows = Papa.parse(csvText, {{header:true, skipEmptyLines:true}}).data;
-      if (!rows.length) {{
-          showError("CSV loaded but appears empty.");
-          return;
-      }}
-
-      const monthTotals = {{}};
-      const genderMonth = {{}};
-      const ageDist = {{}};
-      const conditionCounts = Object.fromEntries(CONDITION_COLS.map(c => [c, 0]));
-
-      rows.forEach(row => {{
-          const month   = titleCase((row["Month"] || "").trim());
-          const gender  = titleCase((row["Gender"] || "Unknown").trim()) || "Unknown";
-          const ageGrp  = (row["Age"] || "Unknown").trim() || "Unknown";
-
-          if (!month) return; // skip blank lines
-
-          // consultations per month
-          monthTotals[month] = (monthTotals[month] || 0) + 1;
-
-          // gender per month
-          genderMonth[month] = genderMonth[month] || {{}};
-          genderMonth[month][gender] = (genderMonth[month][gender] || 0) + 1;
-
-          // age distribution
-          ageDist[ageGrp] = (ageDist[ageGrp] || 0) + 1;
-
-          // conditions
-          CONDITION_COLS.forEach(c => {{
-              if ((row[c] || "").toLowerCase() === "yes") conditionCounts[c]++;
-          }});
-      }});
-
-      // ==== Plotly charts ====
-      const months = Object.keys(monthTotals).sort();
-
-      Plotly.newPlot("chart-month", [{{
-        type: "bar",
-        x: months,
-        y: months.map(m => monthTotals[m])
-      }}], {{
-        title: "Total Consultations per Month",
-        xaxis: {{ title: "Month" }},
-        yaxis: {{ title: "Consultations" }}
-      }});
-
-      const genders = Array.from(new Set(Object.values(genderMonth).flatMap(o => Object.keys(o))));
-      Plotly.newPlot("chart-gender",
-        genders.map(g => ({{
-          name: g,
-          type: "bar",
-          x: months,
-          y: months.map(m => (genderMonth[m] && genderMonth[m][g]) || 0)
-        }})), {{
-        title: "Consultations by Gender per Month",
-        barmode: "stack",
-        xaxis: {{ title: "Month" }},
-        yaxis: {{ title: "Consultations" }}
-      }});
-
-      const ageGroups = Object.keys(ageDist).sort();
-      Plotly.newPlot("chart-age", [{{
-        type: "bar",
-        x: ageGroups,
-        y: ageGroups.map(a => ageDist[a])
-      }}], {{
-        title: "Age Group Distribution (All Months)",
-        xaxis: {{ title: "Age Group" }},
-        yaxis: {{ title: "Consultations" }}
-      }});
-
-      const top5 = Object.entries(conditionCounts).sort((a,b)=>b[1]-a[1]).slice(0,5);
-      Plotly.newPlot("chart-cond", [{{
-        type: "bar",
-        x: top5.map(t=>t[0]),
-        y: top5.map(t=>t[1])
-      }}], {{
-        title: "Top 5 Reported Conditions",
-        xaxis: {{ title: "Condition" }},
-        yaxis: {{ title: "Count" }}
-      }});
-  }})
-  .catch(err => {{
-      showError("Error loading data – check link & sharing settings. " + err);
-      console.error(err);
-  }});
-</script>
-</body>
-</html>
-"""
-
-html_path.write_text(html_content, encoding="utf-8")
-html_path
-
-    <p>&copy; 2025 EMERGENCY NGO. All services provided are free of charge and without discrimination.</p>
-  </div>
-</footer>
-<script>
-/* Smooth scrolling navigation */
-</script>
-</body>
-</html>
+  <script>
+    /* Smooth scrolling */
